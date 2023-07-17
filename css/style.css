@@ -1,0 +1,54 @@
+/*         ont-family: 'Cedarville Cursive', cursive;
+
+    font-family: 'Pacifico', cursive;
+
+    font-family: 'Righteous', cursive;
+
+ */
+ h1{
+    font-family: 'Pacifico', cursive;
+    position: relative;
+    z-index: 5;
+ }
+ h1::before{
+    content: "";
+    width: 220px;
+    height: 15px;
+    background-color: #e2a311;
+    position: absolute;
+    left: 50%;
+    top: 85%;
+    z-index: -1;
+    transform: translate(-50% ,-50%);
+    transition: all 3ms;
+ }
+  h1:hover h1::before{
+   background-color: #09c44d;
+ }
+ 
+
+ .first-sec{
+    border-bottom-style: dotted;
+    border-bottom-width: 3px;
+ }
+ /* second sec */
+ .second-sec{
+    border-bottom-style: dotted;
+    border-bottom-width: 3px;
+ }
+ h2{
+    font-family: 'Righteous', cursive;
+    background: -webkit-linear-gradient(#b5e211, #09c44d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;  
+ }
+ .bookmark{
+    color: #09c44d;
+ }
+ /* third sec */
+
+ .reading{
+    border-bottom-width: 1px;
+    border-bottom-style:solid;
+    border-color: rgb(207, 204, 204);
+ }

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookmarker</title>
+    <link rel="stylesheet" href="./css/all.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Pacifico&family=Righteous&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div class="whole min-vh-100 bg-warning-subtle">
+        <div class="first-sec container text-center py-5 ">
+            <h1>Bookmarker</h1>
+        </div>
+        <div class="second-sec container py-5 mb-5 ">
+            <div class="favourite d-flex align-items-center justify-content-center pb-5">
+                <span><i class="bookmark fa-solid fa-bookmark fa-xl"></i> </span>
+                <h2 class="px-3 ">Bookmark your favorite sites</h2> <span><i
+                        class="bookmark fa-solid fa-bookmark fa-xl"></i></span>
+            </div>
+            <div id="form-id" class=>
+                <i class="fa-solid fa-floppy-disk"></i>
+                <label for="site-name" class="pb-2 fw-bold">Site Name</label>
+                <input type="text" id="site-name" class="form-control mb-3">
+                <i class="fa-solid fa-link"></i>
+                <label for="site-url" class="pb-2 fw-bold">Site URL</label>
+                <input type="url" id="site-url" class="form-control mb-3">
+                <div class="d-flex justify-content-center">
+                    <button onclick="addNewSite()" class="btn btn-danger px-5 py-2">Submit</button>
+                </div>
+
+            </div>
+        </div>
+        <div class="third-sec">
+            <div class="container bg-white text-center">
+                <div class="reading row py-2 d-flex align-items-center">
+                    <div class="col-3 fw-bold">index</div>
+                    <div class="col-3 fw-bold">Website Name</div>
+                    <div class="col-3 fw-bold">Visit</div>
+                    <div class="col-3 fw-bold">Delete</div>
+                </div>
+                <div id="sec-row">
+                    <!-- <div class="reading row py-2 d-flex align-items-center">
+                        <div class="col-3">1</div>
+                        <div class="col-3">index</div>
+                        <div class="col-3 "><button class="btn btn-success px-3"><i class="fa-solid fa-eye me-1"></i>
+                                Visit</button></div>
+                        <div class="col-3 "><button class="btn btn-danger "><i class="fa-solid fa-trash-can me-1"></i>
+                                Delete</button></div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/all.min.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
