@@ -1,34 +1,34 @@
-//------------bag array
-var allSites = []
-//--------------inputs
 var  firstInput = document.getElementById("site-name");
 var secondInput = document.getElementById("site-url");
-
-
-
-function addNewSite() {
-    var newSite = {
-        name: firstInput.value ,
-        link: secondInput.value 
-    };
-    // console.log(newSite);
-    allSites.push(newSite);
-    console.log(allSites);
-    clearForm()
-    displayAllSites()
-    
-    
-//     document.getElementById("sec-row").innerHTML= `<div class="reading row py-2 d-flex align-items-center">
-//         <div class="col-3">1</div>
-//         <div class="col-3">index</div>
-//         <div class="col-3 "><button class="btn btn-success px-3"><i class="fa-solid fa-eye me-1"></i>
-//                 Visit</button></div>
-//         <div class="col-3 "><button class="btn btn-danger "><i class="fa-solid fa-trash-can me-1"></i>
-//                 Delete</button></div>
-//         </div>`;
+var allSites = [];
+if (localStorage.getItem("allSites") != null) {
+        allSites = JSON.parse(localStorage.getItem("allSites"));
+        displayAllSites();
 }
+function addNewSite() {
+        if (validateURL()) {
+                var newSite = {
+                        name: firstInput.value ,
+                        link: secondInput.value 
+                    };
+                    allSites.push(newSite);
+                    console.log(allSites);
+                    clearForm()
+                    displayAllSites()
+                    
+                    localStorage.setItem("allSites", JSON.stringify(allSites))
+        } else{
+                Swal.fire({
+                        icon: 'info',
+                        title: 'Enter a valid URL',
+                        text: 'your URL must starts with "https://" and ends with ".com"',
+                        footer: '<a href="">Why do I have this issue?</a>'
+                      })
+        }
+        
 
-
+    
+}
 
 function clearForm() {
         firstInput.value= "";
@@ -52,9 +52,16 @@ function displayAllSites() {
 function deleteElement(idx) {
         allSites.splice(idx,1);
         displayAllSites()
+        localStorage.setItem("allSites", JSON.stringify(allSites))
+
 }
 function visitLink(idxlink) {
         open(allSites[idxlink].link)
+}
+
+function validateURL() {
+        var regex = /^https:\/\/.*\.com$/;
+        return regex.test(secondInput.value);
 }
 
 
